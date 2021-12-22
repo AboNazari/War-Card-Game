@@ -1,0 +1,33 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 7rem 2rem 7rem;
+  place-items: center;
+  gap: 0.5rem;
+}
+
+.deck {
+  width: 100%;
+  height: 19rem;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  border-radius: 0.5rem;
+}
+
+.text {
+  grid-column: span 2;
+}
