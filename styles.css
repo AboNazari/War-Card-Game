@@ -2,21 +2,115 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
 }
 body {
   margin: 0;
 }
 
+#head {
+  display: grid;
+  max-width: 100%;
+  gap: 1rem;
+  align-items: center;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: -2rem 0;
+  align-items: center;
+  padding: 1rem;
+  background-color: #1a759f;
+}
+a {
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  background-color: #168aad;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+h2 {
+  margin-top: 3rem;
+  padding-right: 2rem;
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 0.75;
+}
+
+a:hover {
+  background-color: yellowgreen;
+  color: black;
+}
+
+.heading {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+.title {
+  font-family: "Montserrat";
+  text-align: center;
+  margin-top: 1rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 3rem;
+  justify-content: center;
+  letter-spacing: 1px;
+}
+h1 {
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 0.75;
+  margin: 10px 0;
+  padding: 1rem;
+}
+@import url(https://fonts.googleapis.com/css?family=Khula:700);
+body {
+  background: #111;
+}
+.hidden {
+  opacity: 0;
+}
+.console-container {
+  font-family: Khula;
+  font-size: 1em;
+  text-align: center;
+  display: inline;
+  color: white;
+  margin: auto;
+  margin-top: 2rem;
+}
+.console-underscore {
+  display: inline-block;
+  position: relative;
+  top: -0.14em;
+  left: 10px;
+}
 .wrapper {
   display: grid;
   padding: 2rem;
   max-width: 300px;
-  margin: 200px auto;
+  margin: 30px auto;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 12rem 3rem 12rem;
+  grid-template-rows: 3rem 12rem 3rem 12rem;
   place-items: center;
   gap: 0.5rem;
-  background-color: rgb(213, 220, 224);
+  background-color: rgb(173, 184, 190);
   border-radius: 0.3rem;
 }
 
@@ -94,4 +188,30 @@ body {
   bottom: 0.5rem;
   right: 1rem;
   transform: rotate(180deg);
+}
+.game-option {
+  grid-column: span 2;
+}
+#options {
+  padding: 5px;
+  margin-left: 5px;
+}
+label {
+  font-size: 13px;
+  font-weight: bold;
+}
+@media screen and (max-width: 500px) {
+  a {
+    padding: 10px 10px;
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    padding: 1rem;
+  }
+  p {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
 }

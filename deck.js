@@ -51,6 +51,7 @@ class Card {
     cardDiv.innerText = this.suit;
     cardDiv.classList.add("card", this.color);
     cardDiv.dataset.value = `${this.value} ${this.suit}`;
+    cardDiv.style.backgroundColor = "white";
     return cardDiv;
   }
 }

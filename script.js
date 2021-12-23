@@ -22,6 +22,8 @@ const playerDeckElement = document.querySelector(".player-deck");
 const computerDeckElement = document.querySelector(".computer-deck");
 const text = document.querySelector(".text");
 const startButton = document.querySelector(".start");
+const numberOfNewCards = document.getElementById("options");
+
 let playerDeck, computerDeck, inRound, stop;
 
 startButton.addEventListener("click", () => {
@@ -40,13 +42,27 @@ startButton.addEventListener("click", () => {
   }
 });
 
+numberOfNewCards.addEventListener("change", () => {
+  if (inRound) {
+    if (confirm("You want to start a new game  🤔?") == true) {
+      window.location.reload();
+    } else {
+      return;
+    }
+  } else {
+    window.location.reload();
+  }
+});
+
 startGame();
 function startGame() {
   const deck = new Deck();
   deck.Shuffle();
   const midpoint = Math.ceil(deck.numberOfCards / 2);
-  playerDeck = new Deck(deck.cards.slice(0, 10));
-  computerDeck = new Deck(deck.cards.slice(midpoint, 36));
+  playerDeck = new Deck(deck.cards.slice(0, numberOfNewCards.value));
+  computerDeck = new Deck(
+    deck.cards.slice(midpoint, 26 + parseInt(numberOfNewCards.value))
+  );
   inRound = false;
 
   clearBeforeGame();
@@ -56,7 +72,7 @@ function clearBeforeGame() {
   inRound = false;
   computerCardSlot.innerHTML = "";
   playerCardSlot.innerHTML = "";
-  text.innerText = "Get Ready";
+  text.innerText = "Get Ready  😃";
 
   updateDeckCount();
 }
@@ -73,17 +89,17 @@ function flipCard() {
   updateDeckCount();
 
   if (isRoundWinner(playerCard, computerCard)) {
-    text.innerText = "Win!";
+    text.innerText = "Win!  😍";
     text.style.backgroundColor = "green";
     playerDeck.push(playerCard);
     playerDeck.push(computerCard);
   } else if (isRoundWinner(computerCard, playerCard)) {
-    text.innerText = "lose!";
+    text.innerText = "lose!  😟";
     text.style.backgroundColor = "red";
     computerDeck.push(playerCard);
     computerDeck.push(computerCard);
   } else {
-    text.innerText = "draw!";
+    text.innerText = "draw!  😐";
     text.style.backgroundColor = "yellowgreen";
     playerDeck.push(playerCard);
     computerDeck.push(computerCard);
