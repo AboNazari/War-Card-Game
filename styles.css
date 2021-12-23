@@ -195,6 +195,9 @@ body {
 #options {
   padding: 5px;
   margin-left: 5px;
+  border-radius: 0.2rem;
+  background-color: rgb(173, 184, 190);
+  border: 1px solid black;
 }
 label {
   font-size: 13px;
